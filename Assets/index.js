@@ -58,14 +58,30 @@ renderActiveNote();
 }
 
 const newNoteVeiw = function(){
-
-}
+activeNote = {};
+renderActiveNote();
+};
 
 const renderSave = function(){
+if(!noteTitle.val().trim()|| !noteText.val().trim()){
+    saveNote.hide();
 
+} else {
+    saveNote.show();
+}
 }
 const renderList = function (notes){
+noteList.empty();
+const noteListItems = [];
 
+for(var i = 0; i < notes.length; i++){
+    const note = notes[i];
+    const $li = $("<li class = 'list-group-item'>").data(note);
+    const $span = $("<span>").text(note.title);
+    $li.append($span);
+    noteListItems.push($li);
+}
+$noteList.append(noteListItems);
 }
 
 const getANDRender = function(){
