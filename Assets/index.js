@@ -30,17 +30,30 @@ const renderActiveNote = function (){
         noteText.value (activeNote.text);
 
     } else {
-
+        noteTitle.attr("readonly", false);
+        noteText.attr("readonly", false);
+        noteTitle.val("");
+        noteText.val("");
     }
 }
 
 
 const Save = function(){
+const newNote = {
+    title: noteTitle.val(),
+    text: noteText.val()
+};
 
+saveNote(newNote).then(function(data){
+    getANDRender();
+    renderActiveNote();
+});
 }
 
 
 const noteView = function(){
+activeNote = $(this).data();
+renderActiveNote();
 
 }
 
@@ -56,5 +69,7 @@ const renderList = function (notes){
 }
 
 const getANDRender = function(){
-    
+
 }
+
+
