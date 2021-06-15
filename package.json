@@ -1,14 +1,23 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Note-Taker",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/William7786/Note-Taker.git"
+  },
+  "author": "William",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/William7786/Note-Taker/issues"
+  },
+  "homepage": "https://github.com/William7786/Note-Taker#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.17.1"
   }
 }
