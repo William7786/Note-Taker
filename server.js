@@ -8,7 +8,7 @@ app.use(express.static("./public/"))
 
 
 require("./route/api.js")(app);
-require("./route/html")(app);
+require("./route/html.js")(app);
 
 app.listen(PORT, function(){
     console.log("listening on " + PORT)
