@@ -1,5 +1,16 @@
-My Readme
+My Readme function (){
 
+First I created this repository and pushed all of the files given by the instructors.
+Then created the package.json, package-lock and node_modules.
+Then I started to create the route files.
+Next I created My server.
+Then I updated the Route files.
+After updating I started fixing undefined errors.
+Then had to reconnect Style sheet
+After that I started working on the delete button.
+}
+
+END();
 
 
 
