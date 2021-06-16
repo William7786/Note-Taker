@@ -1,5 +1,5 @@
 const fs = require("fs");
-const data = require ("../db/db.json");
+const data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
 const {v4: uuidv4} = require("uuid")
 module.exports = function (app){
     app.get("/api/notes/", function(req,res){
@@ -13,10 +13,11 @@ module.exports = function (app){
         let note = req.body;
         let ID = data.length;
         note.id = ID;
+        data.push(note);
         req.body.id = uuidv4();
 
-        fs.writeFileSync("/db/db.json", JSON.stringify(data), (error)=>{
-            if (error) console.log(err)
+        fs.writeFileSync("../db/db.json", JSON.stringify(data), (error)=>{
+            if (error) console.log(error)
         })
 // note_data.push(req.body);
 // res.json(true);
